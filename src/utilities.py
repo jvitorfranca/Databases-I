@@ -26,6 +26,19 @@ def create_table(conn, create_table_sql):
     except Error as e:
         print(e)
 
+def insert(conn, sql):
+    """ Execute a insert statement
+        :param conn: Connection object
+        :param sql: a INSERT statement
+        :return:
+    """
+    try:
+        c = conn.cursor()
+        c.execute(sql)
+    except Error as e:
+        print(e)
+
+
 def parse_sql_file(path='script.sql'):
     """ Read sql file
         :param path: Path to sql file
